@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" th:href="'/favicons/' + ${model.favicon}">
+    <link rel="apple-touch-icon" th:href="'/favicons/' + ${model.favicon}">
+    <title>
+        Сайт maxzxwd
+    </title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+        a, a:visited, a:hover, a:active {
+            color: inherit;
+            text-decoration: none;
+            background-color: #fff;
+        }
+        a:focus, a:hover {
+            -webkit-filter: invert(100%)
+        }
+    </style>
+</head>
+<body>
+<div style="max-width: 650px; margin-left: auto; margin-right: auto; display: flex; justify-content: flex-end; flex-direction: column; max-height: 480px; height: 100%">
+    <h1 style="text-align: center;">
+        Сайт maxzxwd (Максим Пьянков)
+    </h1>
+    <div style="margin-bottom: auto">
+        <div>
+            <a href="/other/resume.pdf" target="_top" style="font-size: 15pt;">
+                <img alt="Логотип резюме" width="23" height="23" src="/images/resume.svg" align="top">
+                Резюме
+            </a>
+        </div>
+        <div>
+            <a href="mailto:maxzxwd835@gmail.com" target="_top" style="font-size: 15pt;">
+                <img alt="Логотип почты" width="23" height="23" src="/images/email.svg" align="top">
+                Написать мне на почту
+            </a>
+        </div>
+        <div>
+            <a href="https://github.com/maxzxwd" target="_blank" style="font-size: 15pt;">
+                <img alt="Логотип GitHub" width="23" height="23" src="/images/github.svg" align="top">
+                Мой GitHub
+            </a>
+        </div>
+    </div>
+    <div style="margin-left: auto; width: fit-content; margin-bottom: 50px; color: #777">
+        <div th:text="'Вы ' + ${model.counter} + ' посетитель'"/>
+        <div th:text="'Сгенерировано за ' + ${model.elapsed()} + 'мкс'"/>
+        <div th:text="'Время сервера: ' + ${#temporals.format(model.current, 'dd.MM.yyyy HH:mm:ss')}"/>
+    </div>
+</div>
+</body>
+</html>
